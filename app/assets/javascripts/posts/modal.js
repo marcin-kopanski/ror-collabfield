@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+  $('.myModal').modal('hide');
   // when a post is clicked, show its full content in a modal window
   $("body").on( "click", ".single-post-card, .single-post-list", function() {
     var posted_by = $(this).find('.post-content .posted-by').html();
@@ -10,5 +11,9 @@ $(document).on('turbolinks:load', function() {
     $('.loaded-data p').text(post_content);
     $('.loaded-data .interested a').attr('href', interested);
     $('.myModal').modal('show');
+  });
+
+  $("body").on( "click", ".interested a", function() {
+    $('.myModal').modal('hide');
   });
 });
