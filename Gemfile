@@ -68,3 +68,5 @@ gem 'jquery-rails'
 gem 'devise'
 
 gem 'faker'
+
+gem 'will_paginate', '~> 3.1.0'
