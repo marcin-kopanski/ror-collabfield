@@ -66,3 +66,5 @@ gem 'bootstrap_form'
 gem 'jquery-rails'
 
 gem 'devise'
+
+gem 'faker'
