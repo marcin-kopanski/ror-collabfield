@@ -44,8 +44,14 @@ ActiveRecord::Schema.define(version: 20171221125705) do
   end
 
   create_table "private_messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "user_id"
+    t.bigint "conversation_id"
+    t.boolean "seen", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_private_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_private_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,4 +72,5 @@ ActiveRecord::Schema.define(version: 20171221125705) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "private_messages", "users"
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Shared::ConversationsHelper, :type => :helper do
+RSpec.describe Private::ConversationsHelper, :type => :helper do
 
   context '#load_private_messages' do
     let(:conversation) { create(:private_conversation) }

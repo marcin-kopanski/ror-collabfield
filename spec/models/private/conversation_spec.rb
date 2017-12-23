@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Conversation, type: :model do
+RSpec.describe Private::Conversation, type: :model do
   context 'Scopes' do
     it 'gets a conversation between users' do
       user1 = create(:user)
